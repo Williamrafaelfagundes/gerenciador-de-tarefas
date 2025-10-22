@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -8,4 +10,42 @@
 <?import javafx.scene.layout.*?>
 
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <TableView fx:id="tabelaDeTarefas" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="colunaTipoTarefa" prefWidth="304.0" text="Titulo da Tarefa" />
+            <TableColumn fx:id="colunaStatus" prefWidth="85.0" text="Status" />
+          <TableColumn fx:id="colunaVisualizarEditar" minWidth="0.0" prefWidth="161.0" text="Visualizar/Editar" />
+            <TableColumn fx:id="colunaExcluir" prefWidth="109.0" text="Excluir" />
+        </columns>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </BorderPane.margin>
+      </TableView>
+   </center>
+   <top>
+      <BorderPane prefHeight="57.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+         <top>
+            <Label text="Gerenciador de Tarefas" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+            </Label>
+         </top>
+         <right>
+            <Button fx:id="btnNovaTarefa" mnemonicParsing="false" prefHeight="25.0" prefWidth="108.0" text="Nova Tarefa" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </BorderPane.margin>
+            </Button>
+         </right>
+      </BorderPane>
+   </top>
+   <bottom>
+      <Pane prefHeight="23.0" prefWidth="700.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
