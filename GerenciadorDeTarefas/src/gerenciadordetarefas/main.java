@@ -4,7 +4,7 @@
  */
 package gerenciadordetarefas;
 
-import Util.GerenteDeNavegacao;
+import gerenciadordetarefas.Util.GerenteDeNavegacao;
 import java.io.IOException;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
