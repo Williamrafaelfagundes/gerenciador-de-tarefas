@@ -35,6 +35,10 @@ public class GerenteDeNavegacao {
         abrirTela("/GerenciadorDeTarefas/View/FXMLTelaInicial.fxml");
     }
     
+    public void abrirTelaNovaTarefa() {
+        abrirSemFecharAtual("/GerenciadorDeTarefas/View/FXMLNovaTarefa.fxml");
+
+    }
 
     // Método genérico para carregar qualquer tela
     private void abrirTela(String telaFXML) {
@@ -53,8 +57,7 @@ public class GerenteDeNavegacao {
             stage.setScene(scene);
             stage.show();
             stage.setResizable(true);
-           
-                stage.setMaximized(false);
+            stage.setMaximized(false);
             
 
         } catch (IOException e) {
@@ -62,4 +65,33 @@ public class GerenteDeNavegacao {
             e.printStackTrace();
         }
     }
+
+    private void abrirSemFecharAtual(String telaFXML) {
+       try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(telaFXML));
+
+            Parent root = loader.load();
+
+            Object controller = loader.getController();
+
+            if (controller instanceof GerenteDeNavegacaoInterface) {
+                ((GerenteDeNavegacaoInterface) controller).setGerenteDeNavegacao(this);
+            }
+
+            Scene scene = new Scene(root);
+            Stage newStage = new Stage();
+            newStage.setScene(scene);
+            newStage.setResizable(true);
+            newStage.setMaximized(false);
+            newStage.show(); 
+            newStage.showAndWait();
+            
+
+        } catch (IOException e) {
+            System.err.println("Erro ao carregar o FXML: " + telaFXML);
+            e.printStackTrace();
+        }
+    }
+
+    
 }

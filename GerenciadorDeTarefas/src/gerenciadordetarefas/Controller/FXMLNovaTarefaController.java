@@ -4,7 +4,7 @@
  */
 package gerenciadordetarefas.Controller;
 
-import java.awt.Button;
+import javafx.scene.control.Button;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;

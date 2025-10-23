@@ -4,9 +4,12 @@
  */
 package gerenciadordetarefas.Controller;
 
-import java.awt.Button;
+import gerenciadordetarefas.Util.GerenteDeNavegacao;
+import gerenciadordetarefas.Util.GerenteDeNavegacaoInterface;
+import javafx.scene.control.Button;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -17,9 +20,9 @@ import javafx.scene.control.TableView;
  *
  * @author willi
  */
-public class FXMLTelaInicialController implements Initializable {
+public class FXMLTelaInicialController implements Initializable, GerenteDeNavegacaoInterface{
 
-    
+    private GerenteDeNavegacao gerenteDeNavegacao;
     
     @FXML
     private Button btnNovaTarefa;
@@ -46,5 +49,14 @@ public class FXMLTelaInicialController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    @Override
+    public void setGerenteDeNavegacao(GerenteDeNavegacao gerenteDeNavegacao) {
+        this.gerenteDeNavegacao = gerenteDeNavegacao;
+    }
+    @FXML
+    void abrirNovaTarefa(ActionEvent event) {
+        gerenteDeNavegacao.abrirTelaNovaTarefa();
+    }
+
     
 }
